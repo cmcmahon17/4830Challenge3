@@ -40,25 +40,37 @@
                     
                     if (request == "about") {
                         $.get("about.html", stageContent);
+			document.title = $(this).text();
+			$('li').removeClass('active');
+			$('#about').addClass('active');
                     }
                     else if (request == "contact") {
                         $.get("contact.html", stageContent);
+			document.title = $(this).text();
+			$('li').removeClass('active');
+			$('#contact').addClass('active');
                     }
                     else {
                         $.get("home.html", stageContent);
+			document.title = $(this).text();
+			$('li').removeClass('active');
+			$('#home').addClass('active');
                     }
                 });
             });
+	
+		
         </script>
+	
     </head>
     <body>
         <div class="container">
             <div class="header clearfix">
                 <nav role="navigation">
                     <ul class="nav nav-pills pull-right">
-                        <li><a href="./">Home</a></li>
-                        <li><a href="about">About</a></li>
-                        <li><a href="contact">Contact</a></li>
+                        <li id="home" class= "active"><a href="./">Home</a></li>
+                        <li id="about"><a href="about">About</a></li>
+                        <li id="contact"><a href="contact">Contact</a></li>
                     </ul>
                 </nav>
                 <h2 class="text-muted">AJAX Navigation</h2>
@@ -67,3 +79,4 @@
         </div>
     </body>
 </html>
+
